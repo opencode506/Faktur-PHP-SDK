@@ -1,6 +1,6 @@
 <?php
 
-    use opencode506\Faktur\Common;
+    use opencode506\Faktur\Auth;
     use PHPUnit\Framework\TestCase;
 
     final class TokenTest extends TestCase 
@@ -10,7 +10,7 @@
 
         public function testGetToken()
         {
-            $common = new Common('DEV');
+            $common = new Auth('DEV');
             $token = $common->token([
                 'username' => 'cpj-3-101-753619@stag.comprobanteselectronicos.go.cr',
                 'password' => ')^Qa!Qq5/]M;_iVW)p+)'
@@ -23,7 +23,7 @@
         
         public function testRefreshToken()
         {
-            $common = new Common('DEV');
+            $common = new Auth('DEV');
             $token = $common->token([
                 'username' => 'cpj-3-101-753619@stag.comprobanteselectronicos.go.cr',
                 'password' => ')^Qa!Qq5/]M;_iVW)p+)'
